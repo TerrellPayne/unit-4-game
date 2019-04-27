@@ -1,16 +1,48 @@
-#title {
+#game {
+    color: green;
+    text-align: center;
+    background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/NGTYhyRhgilq4uu1a/seamless-animation-white-snowy-and-snow-winter-landscape-with-dry-and-christmas-trees-and-mountain-background-and-snowflakes-falling-in-snow-blue-sky-snowy-concept-in-4k-hd-loop_s3affrar_thumbnail-full08.png");
+}
+#btn {
+    background-color: black;
+    padding: 16px;
+    margin: 16px;
+}
+#targetScore {
+    color: red;
+}
+#totalScore {
+    color: red;
+}
+#snow {
+    color: red;
+}
+.instructions {
+    color: green;
+}
+
+/* #container > .title {
     background-color: orange;
     color: white;
     width: 37%;
+    text-align: center;
+    margin-top: 0%
+    
+    
+} */
+/* #title {
+    background-color: orange;
+    color: white;
+    width: 37%;
+    text-align: center;
     margin-top: 0%
     
     
 }
-
 #instructions {
     background-color: bisque;
     width: 40%;
     
-}
+} */
 
 

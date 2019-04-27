@@ -6,180 +6,53 @@
   <title>CrystalsCollector Game</title>
   <link rel="stylesheet" type="text/css" href="assets/style.css">.
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <script src="assets/javascript/index.js"></script>
 
 </head>
-<div id="container">
+<div>
 
-  <body style="background-color: aquamarine;">
+  <body id="game">
 
-    <div id="title">
-      <h1>CrystalsCollector!</h1>
+    <div class="title">
+      <h1>How Much Snow?</h1>
     </div>
-    <div id="instructions">
-      <p>You will be given a random number at the start of the game.</p>
-      <p>There are four crystals below. By clicking on crystal you will add a specific amount of points to your total
-        score.</p>
-      <p>You win the game by matching your total score to random number, you lose the game if your total score goes
-        above
-        the random number.</p>
-      <p>The value of each crystal in hidden from you until you click on it.</p>
-      <p>Each time when the game starts, the game will change the values of each crystal</p>
+    <div class="instructions">
+      <h3>You will be given a random number at the start of the game.</h3>
+      <h3>There are four snowflakes below. By clicking on each snowflake you will add a specific amount of snow to your total
+        amount.</h3>
+      <h3>You win the game by matching your total amount of now to the random ammount of snow, you lose the game if your total amount goes
+        above the random amount.</h3>
+      <h3>The value of each snowflake in hidden from you until you click on it.</h3>
+      <h3>Each time when the game starts, the game will change the values of each snowflake</h3>
     </div>
 
-    <p id="demo"></p>
+    <h1>Amount of snow: <span id="targetScore"></span></h1>
 
-    <p>Wins:<span id="wins"></span></p>
-    <p>Losses:<span id="losses"></span></p>
+    <h2>Wins:<span id="winCounter"></span></h2>
+    <h2>Losses:<span id="lossCounter"></span></h2>
 
 
-    <button> <img class="crystal-image" src="https://images-na.ssl-images-amazon.com/images/I/51snWRfynML._US500_.jpg"
+    <button id="btn"> <img class="crystal-image" src="http://www.stickpng.com/assets/thumbs/5846a02acef1014c0b5e47fa.png"
         width="100px" height="100px" id="gemOne">
     </button>
-    <button> <img class="crystal-image" src="https://www.yogiapproved.com/wp-content/uploads/2018/02/healing-crystals-featured.jpg"
-        width="100px" height="100px" id="gemTwo">
+    <button id="btn"> <img class="crystal-image"
+        src="https://www.emoji.co.uk/files/phantom-open-emojis/animals-nature-phantom/12526-snowflake.png" width="100px"
+        height="100px" id="gemTwo" >
     </button>
-    <button> <img class="crystal-image" src="https://cdn.shopify.com/s/files/1/1698/5301/products/Screen_Shot_2018-03-05_at_10.37.19_AM.png"
-        width="100px" height="100px" id="gemThree">
+    <button id="btn"> <img class="crystal-image"
+        src="http://www.pngmart.com/files/4/Frozen-Snowflake-PNG-Transparent-Image.png"
+        width="100px" height="100px" id="gemThree" >
     </button>
-    <button> <img class="crystal-image" src="http://thehealingchest.com/assets/images/blog/emotional-baggage.jpg" width="100px"
-        height="100px" id="gemFour">
+    <button id="btn"> <img class="crystal-image" src="https://thumbs.gfycat.com/RemorsefulSpicyConch-size_restricted.gif"
+        width="100px" height="100px" id="gemFour" >
     </button>
 
-    <p>Your total score is:<span id="scoreSpace"></span></p>
+    <h1 id="snow">Your amount of snow: <span id="totalScore"></span></h1>
 
 
 </div>
-<script>
-  $(document).ready(function() {
 
-
-  var totalScore = 0;
-  var winCounter = 0;
-  var lossCounter = 0;
-  var targetScore = Math.floor(Math.random() * 60);
-
-  $("#winCounter").text(wins);
-  $("#lossCounter").text(losses);
-  $("#totalScore").text(totalScore);
-  $("#targetScore").text(targetScore);
-
-  
-  
-  function start() {
-    targetScore = Math.floor(Math.random() * 60);
-    $("#demo").html(targetScore);
-    $(".crystal-image").each(function () {
-      $(this).val(Math.floor(Math.random() * 15))
-      console.log($(this).val())
-    
-
-    });
-    
-  }
- start()
-
- function winning() {
-   wins++;
-   $("#winCounter").text(wins);
- }
- function losing() {
-   losses++;
-   $("#lossCounter").text(losses);
- }
-
- $('#gemOne').on('click', function() {
-    totalScore += crstyal-image;
-    console.log("New total= " + totalScore);
-    $('#scoreSpace').text(totalScore); 
-    if (totalScore > targetScore) {
-            losses++;
-            $("#lossCounter").text(losses);
-               console.log("you lost");
-            start();
-         
-        }
-    if (totalScore == targetScore) {
-            wins++;
-            $("#winCounter").text(wins);
-            alert("you won")
-            console.log("you won");
-            
-          start();
-        }
-   });
-
-   $('#gemTwo').on('click', function(){
-    totalScore += crystal-image;
-    console.log("New total= " + totalScore);
-    $('#scoreSpace').text(totalScore); 
-    if (totalScore > targetScore) {
-            losses++;
-            $('#lossCount').text(losses);
-            console.log("you lost");
-            alert("You lost, try again");
-           start();
-        }
-    if (totalScore == targetScore) {
-            wins++;
-            $('#winCounter').text(wins);
-            console.log("you won");
-            alert("You won! Congratulations!");
-           start();
-        }
-   });
-
-    $('#gemThree').on('click', function() {
-    totalScore += crystal-image;
-    console.log("New total= " + totalScore);
-    $('#scoreSpace').text(totalScore); 
-    if (totalScore > targetScore) {
-            losses++;
-            $('#lossCounter').text(losses);
-            console.log("you lost");
-            alert("You lost, try again");
-           start();
-        }
-    if (totalScore == targetScore) {
-            wins++;
-            $('#winCounter').text(wins);
-            console.log("you won");
-            alert("You won! Congratulations!");
-           start();
-        }
-   });
-
-   $('#gemFour').on('click', function(){
-    totalScore += crstyal-image;
-    console.log("New total= " + totalScore);
-    $('#scoreSpace').text(totalScore); 
-    if (totalScore > targetScore) {
-            losses++;
-            $('#lossCounter').text(losses);
-            console.log("you lost");
-            alert("You lost, try again");
-           start();
-        }
-    if (totalScore == targetScore) {
-            wins++;
-            $('#winCounter').text(wins);
-            console.log("you won");
-            alert("You won! Congratulations!");
-            start();
-        }
-   });
-
-  });
-
-
-
-
- 
-
-
-
-
-
-</script>
 
 
 </body>
